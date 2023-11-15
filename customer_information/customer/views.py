@@ -1,12 +1,10 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from .models import *
-from .serializer import CustomerSerializer, OrderSerializer, HealthRecordSerializer
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .models import Customer, HealthRecord, Order
-from .serializer import CustomerSerializer, HealthRecordSerializer, OrderSerializer
+from .models import *
 from .frontend import *
 from .helper import *
 from .imports import *

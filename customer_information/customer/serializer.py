@@ -1,17 +1,12 @@
 from rest_framework import serializers
-from .models import Customer, Order, HealthRecord
+from .models import *
 
 class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Customer
         fields = '__all__'
 
-class OrderSerializer(serializers.ModelSerializer):
+class MedicalInformationSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Order
-        fields = '__all__'
-
-class HealthRecordSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = HealthRecord
+        model = MedicalInformation
         fields = '__all__'
