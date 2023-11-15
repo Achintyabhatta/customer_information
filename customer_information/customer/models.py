@@ -1,8 +1,8 @@
 from django.db import models
 
 class Customer(models.Model):
-    id = models.IntegerField()
-    created_at = models.DateTimeField()
+    id = models.AutoField(primary_key = True)
+    created_at = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     phone_number = models.CharField(max_length=20)
@@ -16,8 +16,8 @@ class Customer(models.Model):
         return self.name
 
 class MedicalInformation(models.Model):
-    id = models.IntegerField()
-    created_at = models.DateTimeField()
+    id = models.AutoField(primary_key = True)
+    created_at = models.DateTimeField(auto_now=True)
     height = models.FloatField()
     weight = models.FloatField()
     blood_type = models.CharField(max_length=5)

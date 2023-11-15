@@ -1,10 +1,18 @@
 from django.urls import path
 from . import views
 from . frontend import *
+from .views import *
 
 urlpatterns = [
-    path('register/', views.register_customer, name='register_customer'),
-    path('add-health-record/<int:customer_id>/', views.add_health_record, name='add_health_record'),
-    path('store-order-history/<int:customer_id>/', views.store_order_history, name='store_order_history'),
-    path('customer/', Home , name='customer'),
+
+    path('customer-signup', CustomerSignup.as_view(), name='customer'),
+    path('customer-signup-verify-otp', VerifySignupOTP.as_view(), name='customer'),
+    path('customer-login', CustomerLogin.as_view(), name='customer'),
+    path('customer-update-details', UpdateCustomerDetails.as_view(), name='customer'),
+    path('customer-delete-record', DeleteCustomerRecord.as_view(), name='customer'),
+
+    path('add-health-record', AddHealthRecord.as_view(), name='healthRecord'),
+    path('update-health-record', UpdateHealthRecord.as_view(), name='healthRecord'),
+    path('delete-health-record', DeleteHealthRecord.as_view(), name='healthRecord')
+
 ]
